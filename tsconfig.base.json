@@ -29,6 +29,9 @@
       ],
       "@corona-tracker/web/components/info-box": [
         "libs/web/components/info-box/src/index.ts"
+      ],
+      "@corona-tracker/web/components/map": [
+        "libs/web/components/map/src/index.ts"
       ]
     }
   },

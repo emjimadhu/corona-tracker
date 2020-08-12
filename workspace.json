@@ -217,6 +217,36 @@
           }
         }
       }
+    },
+    "web-components-map": {
+      "root": "libs/web/components/map",
+      "sourceRoot": "libs/web/components/map/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/web/components/map/tsconfig.lib.json",
+              "libs/web/components/map/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/web/components/map/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/components/map/jest.config.js",
+            "tsConfig": "libs/web/components/map/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

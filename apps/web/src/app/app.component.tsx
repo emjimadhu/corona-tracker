@@ -6,6 +6,7 @@ import {
   ISelectButtonCountry, ICountry
 } from '@corona-tracker/shared/types';
 import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
+import { WebComponentsMap } from '@corona-tracker/web/components/map';
 
 import './app.component.scss';
 
@@ -72,6 +73,8 @@ export const App = () => {
           total={500000}
         />
       </div>
+
+      <WebComponentsMap />
     </div>
   );
 };
