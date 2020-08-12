@@ -1,14 +1,35 @@
 import React from 'react';
+import {
+  Card, CardContent, Typography
+} from '@material-ui/core';
 
 import './web-components-info-box.component.scss';
 
-export interface IWebComponentsInfoBoxProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface IWebComponentsInfoBoxProps {
+  title: string;
+  cases: number;
+  total: number;
+}
 
-export const WebComponentsInfoBox: React.FC = (properties: IWebComponentsInfoBoxProps) => {
+export const WebComponentsInfoBox: React.FC<IWebComponentsInfoBoxProps> = ({
+  title, cases, total
+}) => {
   return (
-    <div>
-      <h1>Welcome to web-components-info-box!</h1>
-    </div>
+    <Card className="infoBox">
+      <CardContent>
+        <Typography className="infoBox__title" color="textSecondary">
+          {title}
+        </Typography>
+
+        <h2 className="infoBox__cases">
+          {cases}
+        </h2>
+
+        <Typography className="infoBox__total" color="textSecondary">
+          {total} Total
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

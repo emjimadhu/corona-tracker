@@ -5,6 +5,7 @@ import { WebComponentsHeader } from '@corona-tracker/web/components/header';
 import {
   ISelectButtonCountry, ICountry
 } from '@corona-tracker/shared/types';
+import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
 
 import './app.component.scss';
 
@@ -52,6 +53,25 @@ export const App = () => {
         selectedCountry={selectedCountry}
         handleSelectedCountry={handleSelectedCountry}
       />
+      <div className="app__stats">
+        <WebComponentsInfoBox
+          title="Cases"
+          cases={100}
+          total={500000}
+        />
+
+        <WebComponentsInfoBox
+          title="Recovered"
+          cases={100}
+          total={500000}
+        />
+
+        <WebComponentsInfoBox
+          title="Deaths"
+          cases={100}
+          total={500000}
+        />
+      </div>
     </div>
   );
 };
