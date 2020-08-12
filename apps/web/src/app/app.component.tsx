@@ -28,6 +28,10 @@ export const App = () => {
     selectedCountryData,
     setSelectedCountryData
   ] = useState<ICountry | undefined>();
+  const [
+    tableData,
+    setTableData
+  ] = useState<ICountry[]>([]);
 
   const handleSelectedCountry = (event_: React.ChangeEvent<{
     name?: string;
@@ -99,7 +103,9 @@ export const App = () => {
       <Card className="app__right">
         <CardContent>
           <h3>Live Cases by Country</h3>
-          <WebComponentsTable />
+          <WebComponentsTable
+            countries={tableData}
+          />
 
           <h3>Worldwide New Cases</h3>
         </CardContent>

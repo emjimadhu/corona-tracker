@@ -1,13 +1,27 @@
 import React from 'react';
+import { ICountry } from '@corona-tracker/shared/types';
 
 import './web-components-table.component.scss';
 
-export interface IWebComponentsTableProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface IWebComponentsTableProps {
+  countries: ICountry[];
+}
 
-export const WebComponentsTable: React.FC = (properties: IWebComponentsTableProps) => {
+export const WebComponentsTable: React.FC<IWebComponentsTableProps> = ({
+  countries
+}) => {
   return (
-    <div>
-      <h1>Welcome to web-components-table!</h1>
+    <div className="table">
+      {
+        countries.map(({
+          country, cases
+        }: ICountry) => (
+          <tr>
+            <td>{country}</td>
+            <td>{cases}</td>
+          </tr>
+        ))
+      }
     </div>
   );
 };
