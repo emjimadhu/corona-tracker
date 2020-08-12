@@ -1,4 +1,5 @@
 import React from 'react';
+import { WebComponentsHeader } from '@corona-tracker/web/components/header';
 
 import './app.component.scss';
 
@@ -6,7 +7,7 @@ import './app.component.scss';
 export const App = () => {
   return (
     <div className="app">
-      <h1>Corona Tracker</h1>
+      <WebComponentsHeader />
     </div>
   );
 };
