@@ -23,31 +23,45 @@ export const App = () => {
     selectedCountry,
     setSelectedCountry
   ] = useState('worldwide');
+  const [
+    selectedCountryData,
+    setSelectedCountryData
+  ] = useState<ICountry | undefined>();
 
   const handleSelectedCountry = (event_: React.ChangeEvent<{
     name?: string;
     value: unknown;
   }>) => {
-    setSelectedCountry(event_.target.value as string);
+    const countryCode = event_.target.value as string;
+    const url = `https://disease.sh/v3/covid-19/${(countryCode === 'worldwide') ? 'all' : `countries/${countryCode}`}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then((data: ICountry) => {
+        setSelectedCountry(countryCode);
+        setSelectedCountryData(data);
+      });
   };
 
   useEffect(() => {
-    const getCountriesList = () => {
-      fetch('https://disease.sh/v3/covid-19/countries')
-        .then(response => response.json())
-        .then((data: ICountry[]) => {
-          const countryList = data.map((country: ICountry) => {
-            return {
-              name: country.country,
-              value: country.countryInfo.iso2
-            };
-          });
-
-          setCountries(countryList);
+    fetch('https://disease.sh/v3/covid-19/countries')
+      .then(response => response.json())
+      .then((data: ICountry[]) => {
+        const countryList = data.map((country: ICountry) => {
+          return {
+            name: country.country,
+            value: country.countryInfo.iso2
+          };
         });
-    };
 
-    getCountriesList();
+        setCountries(countryList);
+      });
+
+    fetch('https://disease.sh/v3/covid-19/all')
+      .then(response => response.json())
+      .then((data: ICountry) => {
+        setSelectedCountryData(data);
+      });
   }, []);
 
   return (
@@ -61,20 +75,20 @@ export const App = () => {
         <div className="app__stats">
           <WebComponentsInfoBox
             title="Cases"
-            cases={100}
-            total={500000}
+            cases={selectedCountryData?.todayCases}
+            total={selectedCountryData?.cases}
           />
 
           <WebComponentsInfoBox
             title="Recovered"
-            cases={100}
-            total={500000}
+            cases={selectedCountryData?.todayRecovered}
+            total={selectedCountryData?.recovered}
           />
 
           <WebComponentsInfoBox
             title="Deaths"
-            cases={100}
-            total={500000}
+            cases={selectedCountryData?.todayDeaths}
+            total={selectedCountryData?.deaths}
           />
         </div>
 
