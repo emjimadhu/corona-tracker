@@ -1,6 +1,7 @@
+/* eslint-disable jest/prefer-expect-assertions, jest/expect-expect */
 import { getGreeting } from '../support/app.po';
 
-describe('web', () => {
+describe('hangman-game', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +9,6 @@ describe('web', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to web!');
+    getGreeting().contains('Welcome to hangman-game!');
   });
 });

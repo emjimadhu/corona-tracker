@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -9,13 +10,13 @@
 // ***********************************************
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Cypress {
-  interface Chainable<Subject> {
+  interface IChainable<Subject> {
     login(email: string, password: string): void;
   }
 }
 //
 // -- This is a parent command --
-Cypress.Commands.add('login', (email, password) => {
+Cypress.Commands.add('login', (email: string, password: string) => {
   console.log('Custom command example: Login', email, password);
 });
 //
