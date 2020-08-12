@@ -185,6 +185,38 @@
           }
         }
       }
+    },
+    "web-components-info-box": {
+      "root": "libs/web/components/info-box",
+      "sourceRoot": "libs/web/components/info-box/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/web/components/info-box/tsconfig.lib.json",
+              "libs/web/components/info-box/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/web/components/info-box/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/components/info-box/jest.config.js",
+            "tsConfig": "libs/web/components/info-box/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

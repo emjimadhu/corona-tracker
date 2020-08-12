@@ -25,6 +25,8 @@
     "test:web": "nx test web",
     "lint:web-components-header": "nx lint web-components-header",
     "test:web-components-header": "nx test web-components-header",
+    "lint:web-components-info-box": "nx lint web-components-info-box",
+    "test:web-components-info-box": "nx test web-components-info-box",
     "lint:web-e2e": "nx lint web-e2e",
     "barrel:shared-types": "barrel-maintainer libs/shared/types/src --includeRootDir --singleQuotes --ts",
     "lint:shared-types": "nx lint shared-types",

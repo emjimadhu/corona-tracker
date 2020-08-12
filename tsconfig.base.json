@@ -26,6 +26,9 @@
       ],
       "@corona-tracker/shared/types": [
         "libs/shared/types/src/index.ts"
+      ],
+      "@corona-tracker/web/components/info-box": [
+        "libs/web/components/info-box/src/index.ts"
       ]
     }
   },
