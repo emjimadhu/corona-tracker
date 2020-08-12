@@ -10,6 +10,7 @@ import {
 } from '@corona-tracker/shared/types';
 import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
 import { WebComponentsMap } from '@corona-tracker/web/components/map';
+import { WebComponentsTable } from '@corona-tracker/web/components/table';
 
 import './app.component.scss';
 
@@ -98,6 +99,7 @@ export const App = () => {
       <Card className="app__right">
         <CardContent>
           <h3>Live Cases by Country</h3>
+          <WebComponentsTable />
 
           <h3>Worldwide New Cases</h3>
         </CardContent>

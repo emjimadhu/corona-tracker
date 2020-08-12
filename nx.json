@@ -47,6 +47,9 @@
     },
     "web-components-map": {
       "tags": []
+    },
+    "web-components-table": {
+      "tags": []
     }
   }
 }
