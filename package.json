@@ -1,8 +1,29 @@
 {
   "name": "corona-tracker",
   "version": "0.0.0",
+  "description": "Hangman Game using React and NX Workspace",
   "license": "MIT",
+  "engines": {
+    "node": ">=12.16.0",
+    "npm": ">=6.13.0",
+    "yarn": ">=1.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emjimadhu/corona-tracker.git"
+  },
+  "bugs": "https://github.com/emjimadhu/corona-tracker/issues",
+  "homepage": "https://github.com/emjimadhu/corona-tracker/blob/develop/README.md",
+  "author": {
+    "email": "emjimadhu@gmail.com",
+    "name": "Em Ji Madhu"
+  },
   "scripts": {
+    "start:web": "nx serve web",
+    "build:web": "nx build web",
+    "lint:web": "nx lint web",
+    "test:web": "nx test web",
+    "lint:web-e2e": "nx lint web-e2e",
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
@@ -23,7 +44,9 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "checkYarn": "echo \"$npm_execpath\" | grep -q \"yarn\\.js$\" || (echo '⚠️  Use YARN not NPM! ⚠️ ' && echo && exit 1)",
+    "preinstall": "$npm_execpath --silent run checkYarn"
   },
   "private": true,
   "dependencies": {
