@@ -35,6 +35,9 @@
       "implicitDependencies": [
         "web"
       ]
+    },
+    "web-components-header": {
+      "tags": []
     }
   }
 }

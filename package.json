@@ -23,6 +23,8 @@
     "build:web": "nx build web",
     "lint:web": "nx lint web",
     "test:web": "nx test web",
+    "lint:web-components-header": "nx lint web-components-header",
+    "test:web-components-header": "nx test web-components-header",
     "lint:web-e2e": "nx lint web-e2e",
     "nx": "nx",
     "start": "nx serve",

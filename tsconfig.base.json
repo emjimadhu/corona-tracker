@@ -20,7 +20,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@corona-tracker/web/components/header": [
+        "libs/web/components/header/src/index.ts"
+      ]
+    }
   },
   "exclude": [
     "node_modules",
