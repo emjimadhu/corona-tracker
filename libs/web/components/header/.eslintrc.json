@@ -210,8 +210,6 @@
         "message": "Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting"
       }
     ],
-    "getter-return": "warn",
-    "import/first": "error",
     "import/no-amd": "error",
     "import/no-webpack-loader-syntax": "error",
     "react/forbid-foreign-prop-types": [
@@ -338,7 +336,8 @@
         "@typescript-eslint/typedef": 0,
         "arrow-body-style": 0,
         "import/default": 0,
-        "import/no-named-as-default": 0
+        "import/no-named-as-default": 0,
+        "import/no-unresolved": 0
       }
     }
   ]
