@@ -14,6 +14,17 @@ export const App = () => {
     countries,
     setCountries
   ] = useState<ISelectButtonCountry[]>([]);
+  const [
+    selectedCountry,
+    setSelectedCountry
+  ] = useState('worldwide');
+
+  const handleSelectedCountry = (event_: React.ChangeEvent<{
+    name?: string;
+    value: unknown;
+  }>) => {
+    setSelectedCountry(event_.target.value as string);
+  };
 
   useEffect(() => {
     const getCountriesList = () => {
@@ -38,6 +49,8 @@ export const App = () => {
     <div className="app">
       <WebComponentsHeader
         countriesList={countries}
+        selectedCountry={selectedCountry}
+        handleSelectedCountry={handleSelectedCountry}
       />
     </div>
   );

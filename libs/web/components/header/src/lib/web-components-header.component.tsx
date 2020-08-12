@@ -8,10 +8,17 @@ import './web-components-header.component.scss';
 
 export interface IWebComponentsHeaderProps {
   countriesList: ISelectButtonCountry[];
+  selectedCountry: string;
+  handleSelectedCountry: (event_: React.ChangeEvent<{
+    name?: string;
+    value: unknown;
+  }>) => void;
 }
 
 export const WebComponentsHeader: React.FC<IWebComponentsHeaderProps> = ({
-  countriesList
+  countriesList,
+  selectedCountry,
+  handleSelectedCountry
 }) => {
   return (
     <div className="header">
@@ -19,8 +26,10 @@ export const WebComponentsHeader: React.FC<IWebComponentsHeaderProps> = ({
       <FormControl className="header__dropdown">
         <Select
           variant="outlined"
-          value=""
+          value={selectedCountry}
+          onChange={event_ => handleSelectedCountry(event_)}
         >
+          <MenuItem value="worldwide">Worldwide</MenuItem>
           {
             countriesList.map((country: ISelectButtonCountry, index: number) => (
               <MenuItem value={country.value} key={index}>{country.name}</MenuItem>
