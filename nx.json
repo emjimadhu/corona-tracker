@@ -38,6 +38,9 @@
     },
     "web-components-header": {
       "tags": []
+    },
+    "shared-types": {
+      "tags": []
     }
   }
 }
