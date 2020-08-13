@@ -4,6 +4,7 @@ import React, {
 import {
   Card, CardContent
 } from '@material-ui/core';
+import { LatLngExpression } from 'leaflet';
 import { WebComponentsHeader } from '@corona-tracker/web/components/header';
 import {
   ISelectButtonCountry, ICountry, sortCountries
@@ -13,6 +14,7 @@ import { WebComponentsMap } from '@corona-tracker/web/components/map';
 import { WebComponentsTable } from '@corona-tracker/web/components/table';
 import { WebComponentsLineGraph } from '@corona-tracker/web/components/line-graph';
 
+import 'leaflet/dist/leaflet.css';
 import './app.component.scss';
 
 
@@ -33,6 +35,17 @@ export const App = () => {
     tableData,
     setTableData
   ] = useState<ICountry[]>([]);
+  const [
+    mapCenter,
+    setMapCenter
+  ] = useState<LatLngExpression>({
+    lat: 20.5937,
+    lng: 78.9629
+  });
+  const [
+    mapZoom,
+    setMapZoom
+  ] = useState(3);
 
   const handleSelectedCountry = (event_: React.ChangeEvent<{
     name?: string;
@@ -99,7 +112,10 @@ export const App = () => {
           />
         </div>
 
-        <WebComponentsMap />
+        <WebComponentsMap
+          center={mapCenter}
+          zoom={mapZoom}
+        />
       </div>
 
       <Card className="app__right">
