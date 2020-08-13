@@ -3,4 +3,13 @@
   margin-bottom: "20px";
   align-items: center;
   justify-content: space-between;
+
+  &__dropdown {
+    background-color: white;
+  }
+}
+
+.app__header > h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
 }
