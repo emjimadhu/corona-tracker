@@ -3,16 +3,18 @@ import {
   Map, TileLayer
 } from 'react-leaflet';
 import { LatLngExpression } from 'leaflet';
+import { ICountry } from '@corona-tracker/shared/types';
 
 import './web-components-map.component.scss';
 
 export interface IWebComponentsMapProps {
   center: LatLngExpression;
   zoom: number;
+  countries: ICountry[];
 }
 
 export const WebComponentsMap: React.FC<IWebComponentsMapProps> = ({
-  center, zoom
+  center, zoom, countries
 }) => {
   return (
     <div>

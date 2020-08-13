@@ -46,6 +46,10 @@ export const App = () => {
     mapZoom,
     setMapZoom
   ] = useState(3);
+  const [
+    countries,
+    setCountries
+  ] = useState<ICountry[]>([]);
 
   const handleSelectedCountry = (event_: React.ChangeEvent<{
     name?: string;
@@ -81,6 +85,7 @@ export const App = () => {
 
         setSelectButtonCountries(countryList);
         setTableData(sortCountries(data));
+        setCountries(data);
       });
 
     fetch('https://disease.sh/v3/covid-19/all')
@@ -121,6 +126,7 @@ export const App = () => {
         <WebComponentsMap
           center={mapCenter}
           zoom={mapZoom}
+          countries={countries}
         />
       </div>
 
