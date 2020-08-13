@@ -60,6 +60,7 @@ export const App = () => {
         });
 
         setCountries(countryList);
+        setTableData(data);
       });
 
     fetch('https://disease.sh/v3/covid-19/all')
