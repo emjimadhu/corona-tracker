@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from '@material-ui/core';
+import numeral from 'numeral';
 import { ICountry } from '@corona-tracker/shared/types';
 
 import './web-components-table.component.scss';
@@ -20,7 +20,7 @@ export const WebComponentsTable: React.FC<IWebComponentsTableProps> = ({
               <tr key={index}>
                 <td>{country.country}</td>
                 <td>
-                  <strong>{country.cases}</strong>
+                  <strong>{numeral(country.cases).format('0,0')}</strong>
                 </td>
               </tr>
             ))

@@ -9,13 +9,17 @@ export interface IWebComponentsInfoBoxProps {
   title: string;
   cases: string;
   total: string;
+  setCasesType: (event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 export const WebComponentsInfoBox: React.FC<IWebComponentsInfoBoxProps> = ({
-  title, cases, total
+  title, cases, total, setCasesType
 }) => {
   return (
-    <Card className="infoBox">
+    <Card
+      className="infoBox"
+      onClick={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(event_)}
+    >
       <CardContent>
         <Typography className="infoBox__title" color="textSecondary">
           {title}

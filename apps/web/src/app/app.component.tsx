@@ -50,6 +50,10 @@ export const App = () => {
     countries,
     setCountries
   ] = useState<ICountry[]>([]);
+  const [
+    casesType,
+    setCasesType
+  ] = useState<HistoricalDataTypesEnum>(HistoricalDataTypesEnum.CASES);
 
   const handleSelectedCountry = (event_: React.ChangeEvent<{
     name?: string;
@@ -108,18 +112,21 @@ export const App = () => {
             title="Cases"
             cases={prettyPrintStat(selectedCountry?.todayCases)}
             total={prettyPrintStat(selectedCountry?.cases)}
+            setCasesType={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(HistoricalDataTypesEnum.CASES)}
           />
 
           <WebComponentsInfoBox
             title="Recovered"
             cases={prettyPrintStat(selectedCountry?.todayRecovered)}
             total={prettyPrintStat(selectedCountry?.recovered)}
+            setCasesType={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(HistoricalDataTypesEnum.RECOVERED)}
           />
 
           <WebComponentsInfoBox
             title="Deaths"
             cases={prettyPrintStat(selectedCountry?.todayDeaths)}
             total={prettyPrintStat(selectedCountry?.deaths)}
+            setCasesType={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(HistoricalDataTypesEnum.DEATHS)}
           />
         </div>
 
@@ -127,7 +134,7 @@ export const App = () => {
           center={mapCenter}
           zoom={mapZoom}
           countries={countries}
-          casesType={HistoricalDataTypesEnum.CASES}
+          casesType={casesType}
         />
       </div>
 
