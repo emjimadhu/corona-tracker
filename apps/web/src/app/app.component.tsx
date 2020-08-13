@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import { WebComponentsHeader } from '@corona-tracker/web/components/header';
 import {
-  ISelectButtonCountry, ICountry
+  ISelectButtonCountry, ICountry, sortCountries
 } from '@corona-tracker/shared/types';
 import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
 import { WebComponentsMap } from '@corona-tracker/web/components/map';
@@ -60,7 +60,7 @@ export const App = () => {
         });
 
         setCountries(countryList);
-        setTableData(data);
+        setTableData(sortCountries(data));
       });
 
     fetch('https://disease.sh/v3/covid-19/all')
