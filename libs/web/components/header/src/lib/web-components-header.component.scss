@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  margin-bottom: "20px";
+  margin-bottom: 20px;
   align-items: center;
   justify-content: space-between;
 
@@ -9,7 +9,7 @@
   }
 }
 
-.app__header > h1 {
+.header > h1 {
   color: #fc3c3c;
   font-size: 2rem;
 }
