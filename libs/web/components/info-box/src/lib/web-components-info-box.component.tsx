@@ -6,6 +6,8 @@ import {
 import './web-components-info-box.component.scss';
 
 export interface IWebComponentsInfoBoxProps {
+  isActive: boolean;
+  isRed?: boolean;
   title: string;
   cases: string;
   total: string;
@@ -13,11 +15,11 @@ export interface IWebComponentsInfoBoxProps {
 }
 
 export const WebComponentsInfoBox: React.FC<IWebComponentsInfoBoxProps> = ({
-  title, cases, total, setCasesType
+  isActive, isRed, title, cases, total, setCasesType
 }) => {
   return (
     <Card
-      className="infoBox"
+      className={`infoBox ${isActive && 'infoBox--selected'} ${isRed && 'infoBox--red'}`}
       onClick={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(event_)}
     >
       <CardContent>
@@ -25,7 +27,7 @@ export const WebComponentsInfoBox: React.FC<IWebComponentsInfoBoxProps> = ({
           {title}
         </Typography>
 
-        <h2 className="infoBox__cases">
+        <h2 className={`infoBox__cases ${!isRed && 'infoBox__cases--green'}`}>
           {cases}
         </h2>
 

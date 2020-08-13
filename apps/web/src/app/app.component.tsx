@@ -110,6 +110,7 @@ export const App = () => {
         <div className="app__stats">
           <WebComponentsInfoBox
             title="Cases"
+            isActive={casesType === HistoricalDataTypesEnum.CASES}
             cases={prettyPrintStat(selectedCountry?.todayCases)}
             total={prettyPrintStat(selectedCountry?.cases)}
             setCasesType={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(HistoricalDataTypesEnum.CASES)}
@@ -117,6 +118,7 @@ export const App = () => {
 
           <WebComponentsInfoBox
             title="Recovered"
+            isActive={casesType === HistoricalDataTypesEnum.RECOVERED}
             cases={prettyPrintStat(selectedCountry?.todayRecovered)}
             total={prettyPrintStat(selectedCountry?.recovered)}
             setCasesType={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(HistoricalDataTypesEnum.RECOVERED)}
@@ -124,6 +126,7 @@ export const App = () => {
 
           <WebComponentsInfoBox
             title="Deaths"
+            isActive={casesType === HistoricalDataTypesEnum.DEATHS}
             cases={prettyPrintStat(selectedCountry?.todayDeaths)}
             total={prettyPrintStat(selectedCountry?.deaths)}
             setCasesType={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(HistoricalDataTypesEnum.DEATHS)}
