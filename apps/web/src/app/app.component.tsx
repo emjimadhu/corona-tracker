@@ -20,16 +20,16 @@ import './app.component.scss';
 
 export const App = () => {
   const [
-    countries,
-    setCountries
+    selectButtonCountries,
+    setSelectButtonCountries
   ] = useState<ISelectButtonCountry[]>([]);
+  const [
+    selectButtonSelectedCountry,
+    setSelectButtonSelectedCountry
+  ] = useState('worldwide');
   const [
     selectedCountry,
     setSelectedCountry
-  ] = useState('worldwide');
-  const [
-    selectedCountryData,
-    setSelectedCountryData
   ] = useState<ICountry | undefined>();
   const [
     tableData,
@@ -57,8 +57,8 @@ export const App = () => {
     fetch(url)
       .then(response => response.json())
       .then((data: ICountry) => {
-        setSelectedCountry(countryCode);
-        setSelectedCountryData(data);
+        setSelectButtonSelectedCountry(countryCode);
+        setSelectedCountry(data);
 
         setMapCenter([
           data.countryInfo.lat,
@@ -79,14 +79,14 @@ export const App = () => {
           };
         });
 
-        setCountries(countryList);
+        setSelectButtonCountries(countryList);
         setTableData(sortCountries(data));
       });
 
     fetch('https://disease.sh/v3/covid-19/all')
       .then(response => response.json())
       .then((data: ICountry) => {
-        setSelectedCountryData(data);
+        setSelectedCountry(data);
       });
   }, []);
 
@@ -94,27 +94,27 @@ export const App = () => {
     <div className="app">
       <div className="app__left">
         <WebComponentsHeader
-          countriesList={countries}
-          selectedCountry={selectedCountry}
+          countriesList={selectButtonCountries}
+          selectedCountry={selectButtonSelectedCountry}
           handleSelectedCountry={handleSelectedCountry}
         />
         <div className="app__stats">
           <WebComponentsInfoBox
             title="Cases"
-            cases={selectedCountryData?.todayCases}
-            total={selectedCountryData?.cases}
+            cases={selectedCountry?.todayCases}
+            total={selectedCountry?.cases}
           />
 
           <WebComponentsInfoBox
             title="Recovered"
-            cases={selectedCountryData?.todayRecovered}
-            total={selectedCountryData?.recovered}
+            cases={selectedCountry?.todayRecovered}
+            total={selectedCountry?.recovered}
           />
 
           <WebComponentsInfoBox
             title="Deaths"
-            cases={selectedCountryData?.todayDeaths}
-            total={selectedCountryData?.deaths}
+            cases={selectedCountry?.todayDeaths}
+            total={selectedCountry?.deaths}
           />
         </div>
 
