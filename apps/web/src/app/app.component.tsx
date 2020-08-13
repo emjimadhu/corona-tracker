@@ -7,7 +7,7 @@ import {
 import { LatLngExpression } from 'leaflet';
 import { WebComponentsHeader } from '@corona-tracker/web/components/header';
 import {
-  ISelectButtonCountry, ICountry, sortCountries, HistoricalDataTypesEnum
+  ISelectButtonCountry, ICountry, sortCountries, HistoricalDataTypesEnum, prettyPrintStat
 } from '@corona-tracker/shared/types';
 import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
 import { WebComponentsMap } from '@corona-tracker/web/components/map';
@@ -106,20 +106,20 @@ export const App = () => {
         <div className="app__stats">
           <WebComponentsInfoBox
             title="Cases"
-            cases={selectedCountry?.todayCases}
-            total={selectedCountry?.cases}
+            cases={prettyPrintStat(selectedCountry?.todayCases)}
+            total={prettyPrintStat(selectedCountry?.cases)}
           />
 
           <WebComponentsInfoBox
             title="Recovered"
-            cases={selectedCountry?.todayRecovered}
-            total={selectedCountry?.recovered}
+            cases={prettyPrintStat(selectedCountry?.todayRecovered)}
+            total={prettyPrintStat(selectedCountry?.recovered)}
           />
 
           <WebComponentsInfoBox
             title="Deaths"
-            cases={selectedCountry?.todayDeaths}
-            total={selectedCountry?.deaths}
+            cases={prettyPrintStat(selectedCountry?.todayDeaths)}
+            total={prettyPrintStat(selectedCountry?.deaths)}
           />
         </div>
 

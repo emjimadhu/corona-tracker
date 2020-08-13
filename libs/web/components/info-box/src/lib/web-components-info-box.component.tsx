@@ -7,8 +7,8 @@ import './web-components-info-box.component.scss';
 
 export interface IWebComponentsInfoBoxProps {
   title: string;
-  cases: number;
-  total: number;
+  cases: string;
+  total: string;
 }
 
 export const WebComponentsInfoBox: React.FC<IWebComponentsInfoBoxProps> = ({
