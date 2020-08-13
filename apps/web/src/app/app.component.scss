@@ -11,6 +11,28 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &__information > h3 {
+    color: #6a5d5d;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-top: 1rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+
+    .MuiCardContent--root {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  }
 }
 
 @media (max-width: 990px) {

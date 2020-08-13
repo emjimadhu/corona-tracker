@@ -110,6 +110,7 @@ export const App = () => {
         <div className="app__stats">
           <WebComponentsInfoBox
             title="Cases"
+            isRed
             isActive={casesType === HistoricalDataTypesEnum.CASES}
             cases={prettyPrintStat(selectedCountry?.todayCases)}
             total={prettyPrintStat(selectedCountry?.cases)}
@@ -126,6 +127,7 @@ export const App = () => {
 
           <WebComponentsInfoBox
             title="Deaths"
+            isRed
             isActive={casesType === HistoricalDataTypesEnum.DEATHS}
             cases={prettyPrintStat(selectedCountry?.todayDeaths)}
             total={prettyPrintStat(selectedCountry?.deaths)}
@@ -143,15 +145,17 @@ export const App = () => {
 
       <Card className="app__right">
         <CardContent>
-          <h3>Live Cases by Country</h3>
-          <WebComponentsTable
-            countries={tableData}
-          />
+          <div className="app__information">
+            <h3>Live Cases by Country</h3>
+            <WebComponentsTable
+              countries={tableData}
+            />
 
-          <h3>Worldwide New {casesType.toUpperCase()}</h3>
-          <WebComponentsLineGraph
-            casesType={casesType}
-          />
+            <h3>Worldwide New {casesType.toUpperCase()}</h3>
+            <WebComponentsLineGraph
+              casesType={casesType}
+            />
+          </div>
         </CardContent>
       </Card>
     </div>

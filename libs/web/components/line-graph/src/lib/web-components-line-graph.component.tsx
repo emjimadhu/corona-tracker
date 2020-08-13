@@ -92,7 +92,7 @@ export const WebComponentsLineGraph: React.FC<IWebComponentsLineGraphProps> = ({
   }, [casesType]);
 
   return (
-    <div>
+    <div className="graph">
       <Line
         data={{
           datasets: [
