@@ -19,7 +19,7 @@ export const WebComponentsInfoBox: React.FC<IWebComponentsInfoBoxProps> = ({
 }) => {
   return (
     <Card
-      className={`infoBox ${isActive && 'infoBox--selected'} ${isRed && 'infoBox--red'}`}
+      className={`infoBox ${isActive && 'infoBox--selected'} ${isRed && isActive && 'infoBox--red'}`}
       onClick={(event_: React.MouseEvent<HTMLDivElement, MouseEvent>) => setCasesType(event_)}
     >
       <CardContent>

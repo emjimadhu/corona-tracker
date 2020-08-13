@@ -1,13 +1,14 @@
 .infoBox {
   flex: 1;
   cursor: pointer;
+  border-top: 10px solid #e0e0e0;
 
   &:not(:last-child) {
     margin-right: 10px;
   }
 
   &--selected {
-    border-top: 10px solid greenyellow;
+    border-top: 10px solid #4caf50;
   }
 
   &--red {
@@ -21,7 +22,7 @@
     margin-bottom: 0.5rem;
 
     &--green {
-      color: lightgreen !important;
+      color: #4caf50 !important;
     }
   }
 

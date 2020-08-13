@@ -13,8 +13,8 @@ export const casesTypeColors = {
     multiplier: 800
   },
   recovered: {
-    hex: '#7dd71d',
-    rgb: 'rgb(125, 215, 29)',
+    hex: '#4caf50',
+    rgb: 'rgb(76, 175, 80)',
     half_op: 'rgba(125, 215, 29, 0.5)',
     multiplier: 1200
   },
