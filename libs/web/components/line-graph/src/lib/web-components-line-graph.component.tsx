@@ -3,15 +3,11 @@ import React, {
 } from 'react';
 import { Line } from 'react-chartjs-2';
 import numeral from 'numeral';
-import { IHistoricalData } from '@corona-tracker/shared/types';
+import {
+  IHistoricalData, HistoricalDataTypesEnum
+} from '@corona-tracker/shared/types';
 
 import './web-components-line-graph.component.scss';
-
-enum HistoricalDataTypesEnum {
-  CASES = 'cases',
-  DEATHS = 'deaths',
-  RECOVERED = 'recovered'
-}
 
 const options = {
   legend: {

@@ -7,3 +7,9 @@ export interface IHistoricalData {
   deaths: IHistorialRecord;
   recovered: IHistorialRecord;
 }
+
+export enum HistoricalDataTypesEnum {
+  CASES = 'cases',
+  DEATHS = 'deaths',
+  RECOVERED = 'recovered'
+}

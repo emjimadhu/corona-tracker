@@ -7,7 +7,7 @@ import {
 import { LatLngExpression } from 'leaflet';
 import { WebComponentsHeader } from '@corona-tracker/web/components/header';
 import {
-  ISelectButtonCountry, ICountry, sortCountries
+  ISelectButtonCountry, ICountry, sortCountries, HistoricalDataTypesEnum
 } from '@corona-tracker/shared/types';
 import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
 import { WebComponentsMap } from '@corona-tracker/web/components/map';
@@ -127,6 +127,7 @@ export const App = () => {
           center={mapCenter}
           zoom={mapZoom}
           countries={countries}
+          casesType={HistoricalDataTypesEnum.CASES}
         />
       </div>
 
