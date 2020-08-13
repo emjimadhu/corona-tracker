@@ -59,6 +59,12 @@ export const App = () => {
       .then((data: ICountry) => {
         setSelectedCountry(countryCode);
         setSelectedCountryData(data);
+
+        setMapCenter([
+          data.countryInfo.lat,
+          data.countryInfo.long
+        ]);
+        setMapZoom(4);
       });
   };
 
