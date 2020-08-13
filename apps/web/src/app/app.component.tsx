@@ -145,8 +145,10 @@ export const App = () => {
             countries={tableData}
           />
 
-          <h3>Worldwide New Cases</h3>
-          <WebComponentsLineGraph />
+          <h3>Worldwide New {casesType.toUpperCase()}</h3>
+          <WebComponentsLineGraph
+            casesType={casesType}
+          />
         </CardContent>
       </Card>
     </div>

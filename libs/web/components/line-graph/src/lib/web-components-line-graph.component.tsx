@@ -71,9 +71,13 @@ const buildChartData = (data: IHistoricalData, casesType: HistoricalDataTypesEnu
   return chartData;
 };
 
-export interface IWebComponentsLineGraphProps {} // eslint-disable-line @typescript-eslint/no-empty-interface
+export interface IWebComponentsLineGraphProps {
+  casesType: HistoricalDataTypesEnum;
+}
 
-export const WebComponentsLineGraph: React.FC = (properties: IWebComponentsLineGraphProps) => {
+export const WebComponentsLineGraph: React.FC<IWebComponentsLineGraphProps> = ({
+  casesType
+}) => {
   const [
     lineData,
     setLineData
@@ -83,9 +87,9 @@ export const WebComponentsLineGraph: React.FC = (properties: IWebComponentsLineG
     fetch('https://disease.sh/v3/covid-19/historical/all?lastdays=120')
       .then(response => response.json())
       .then((data: IHistoricalData) => {
-        setLineData(buildChartData(data, HistoricalDataTypesEnum.CASES));
+        setLineData(buildChartData(data, casesType));
       });
-  }, []);
+  }, [casesType]);
 
   return (
     <div>
