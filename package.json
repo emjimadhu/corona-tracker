@@ -31,6 +31,8 @@
     "test:web-components-map": "nx test web-components-map",
     "lint:web-components-table": "nx lint web-components-table",
     "test:web-components-table": "nx test web-components-table",
+    "lint:web-components-line-graph": "nx lint web-components-line-graph",
+    "test:web-components-line-graph": "nx test web-components-line-graph",
     "lint:web-e2e": "nx lint web-e2e",
     "barrel:shared-types": "barrel-maintainer libs/shared/types/src --includeRootDir --singleQuotes --ts",
     "lint:shared-types": "nx lint shared-types",

@@ -11,6 +11,7 @@ import {
 import { WebComponentsInfoBox } from '@corona-tracker/web/components/info-box';
 import { WebComponentsMap } from '@corona-tracker/web/components/map';
 import { WebComponentsTable } from '@corona-tracker/web/components/table';
+import { WebComponentsLineGraph } from '@corona-tracker/web/components/line-graph';
 
 import './app.component.scss';
 
@@ -109,6 +110,7 @@ export const App = () => {
           />
 
           <h3>Worldwide New Cases</h3>
+          <WebComponentsLineGraph />
         </CardContent>
       </Card>
     </div>

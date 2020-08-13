@@ -279,6 +279,38 @@
           }
         }
       }
+    },
+    "web-components-line-graph": {
+      "root": "libs/web/components/line-graph",
+      "sourceRoot": "libs/web/components/line-graph/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/web/components/line-graph/tsconfig.lib.json",
+              "libs/web/components/line-graph/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/web/components/line-graph/**/*"
+            ],
+            "fix": true,
+            "format": "formattify"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/components/line-graph/jest.config.js",
+            "tsConfig": "libs/web/components/line-graph/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

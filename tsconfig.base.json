@@ -35,6 +35,9 @@
       ],
       "@corona-tracker/web/components/table": [
         "libs/web/components/table/src/index.ts"
+      ],
+      "@corona-tracker/web/components/line-graph": [
+        "libs/web/components/line-graph/src/index.ts"
       ]
     }
   },

@@ -50,6 +50,9 @@
     },
     "web-components-table": {
       "tags": []
+    },
+    "web-components-line-graph": {
+      "tags": []
     }
   }
 }
