@@ -65,7 +65,7 @@
   "dependencies": {
     "@material-ui/core": "4.11.0",
     "chart.js": "2.9.3",
-    "document-register-element": "1.13.1",
+    "document-register-element": "1.14.10",
     "leaflet": "1.6.0",
     "numeral": "2.0.6",
     "react": "16.13.1",
