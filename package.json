@@ -113,7 +113,7 @@
     "eslint-plugin-react-hooks": "4.0.4",
     "eslint-plugin-unicorn": "21.0.0",
     "jest": "25.2.3",
-    "prettier": "2.0.4",
+    "prettier": "2.8.8",
     "ts-jest": "25.2.1",
     "ts-node": "7.0.1",
     "tslint": "6.0.0",
