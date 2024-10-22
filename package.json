@@ -74,10 +74,10 @@
     "react-leaflet": "2.7.0"
   },
   "devDependencies": {
-    "@babel/core": "7.11.6",
-    "@babel/preset-env": "7.11.5",
-    "@babel/preset-react": "7.10.4",
-    "@babel/preset-typescript": "7.10.4",
+    "@babel/core": "7.25.9",
+    "@babel/preset-env": "7.25.9",
+    "@babel/preset-react": "7.25.9",
+    "@babel/preset-typescript": "7.25.9",
     "@nrwl/cypress": "10.0.11",
     "@nrwl/eslint-plugin-nx": "10.0.11",
     "@nrwl/jest": "10.0.11",
